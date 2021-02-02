@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import SearchResult from "./SearchResult";
 
-function MainSearch() {
+function MainSearch(props) {
   const [searchInput, setSearchInput] = useState({
     what: "",
     where: "",
@@ -75,7 +75,7 @@ function MainSearch() {
             <input
               id="where"
               type="text"
-              placeholder="e.g. react developer"
+              placeholder="city or country"
               className="w-100"
               onChange={(event) => inputUpdateHandler(event)}
               value={searchInput.where}
@@ -99,7 +99,10 @@ function MainSearch() {
           </div>
         )}
         <Row>
-          {searchResults.length > 0 && searchResults.map((result, index) => <SearchResult key={index} data={result} />)}
+          {searchResults.length > 0 &&
+            searchResults.map((result, index) => (
+              <SearchResult key={index} data={result} selectJobHandler={props.selectJobHandler} />
+            ))}
         </Row>
       </div>
     </Container>

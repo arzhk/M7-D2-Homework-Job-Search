@@ -12,7 +12,7 @@ function NavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link to="#">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="#">Jobs</Link>
           <Link to="#">Courses</Link>
           <Link to="#">Career Advice</Link>

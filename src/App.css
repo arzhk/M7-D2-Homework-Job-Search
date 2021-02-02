@@ -127,6 +127,21 @@ body {
   text-overflow: ellipsis;
 }
 
+.search-result .job-type {
+  background-color: var(--tBlack);
+  color: var(--tWhite);
+  padding: 2px 10px;
+}
+
+#job-detail-main {
+  padding: 50px;
+}
+
+#job-detail-main img {
+  height: 100px;
+  width: 100px;
+}
+
 /* Global Styles */
 
 .dark-background {

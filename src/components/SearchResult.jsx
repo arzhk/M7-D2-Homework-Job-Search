@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function SearchResults(props) {
+  let history = useHistory();
+
+  const moreDetailsHandler = () => {
+    props.selectJobHandler(props.data);
+    history.push(`/${props.data.id}`);
+  };
+
   return (
     <Col xs={6}>
       <div className="search-result mb-3">
@@ -12,13 +19,14 @@ function SearchResults(props) {
           <img src={props.data.company_logo} className="mr-3" alt="company-logo" />
           <div>
             <h5 className="font-weight-bold mb-0">{props.data.company}</h5>
-            <Link to={props.data.company_url} target="_blank">
+            <a href={props.data.company_url} target="_blank">
               {props.data.company_url}
-            </Link>
+            </a>
           </div>
         </div>
-        <div className="d-flex justify-content-end mt-4">
-          <Button variant="dark" className="px-4 mb-0" style={{ fontSize: 14 }}>
+        <div className="d-flex justify-content-between align-items-end mt-4">
+          <p className="job-type mb-0">{props.data.type}</p>
+          <Button variant="dark" className="px-4 mb-0" style={{ fontSize: 14 }} onClick={moreDetailsHandler}>
             More details...
           </Button>
         </div>
