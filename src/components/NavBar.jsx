@@ -16,7 +16,7 @@ function NavBar() {
           <Link to="#">Jobs</Link>
           <Link to="#">Courses</Link>
           <Link to="#">Career Advice</Link>
-          <div class="d-flex align-items-center ml-4">
+          <div className="d-flex align-items-center ml-4">
             <p className="font-weight-bold mb-0">Recruiting? | </p>
             <Link to="#" className="dark-background light-text rounded-pill px-4 py-1" style={{ fontSize: 16 }}>
               Post a job
