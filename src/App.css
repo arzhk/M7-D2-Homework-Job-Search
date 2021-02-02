@@ -104,6 +104,29 @@ body {
   box-shadow: none !important;
 }
 
+.search-result {
+  padding: 20px 20px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 4px 0px var(--tBlack);
+}
+
+.search-result img {
+  height: 50px;
+  width: 50px;
+}
+
+.search-result h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result .job-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Global Styles */
 
 .dark-background {

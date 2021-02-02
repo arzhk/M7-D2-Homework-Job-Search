@@ -7,7 +7,7 @@ function NavBar() {
     <Navbar expand="lg" id="main-nav">
       <div className="d-flex align-items-center mx-4  logo-container">
         <i className="fab fa-dev mr-2"></i>
-        <p className="mb-0 font-weight-bold">DevSearch</p>
+        <p className="mb-0 font-weight-bold">_DevSearch</p>
       </div>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

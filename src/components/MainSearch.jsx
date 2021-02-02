@@ -18,6 +18,9 @@ function MainSearch() {
 
   const searchHandler = async () => {
     try {
+      if (searchResults.length !== 0) {
+        setSearchResults([]);
+      }
       setIsLoading(true);
       const response = await fetch(
         `https://yabba-dabba-duls-cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json${
@@ -37,6 +40,7 @@ function MainSearch() {
             what: "",
             where: "",
           });
+          setSearchResults(data);
           setIsLoading(false);
         }, 1000);
       } else {
@@ -84,17 +88,19 @@ function MainSearch() {
           </Col>
         </Row>
       </div>
+
       <div id="search-results" className="mt-4">
-        {isLoading ? (
+        {isLoading && (
           <div className="d-flex align-items-center">
             <span className="font-weight-bold">Loading search results...</span>
             <Spinner animation="grow" variant="dark" />
             <Spinner animation="grow" variant="dark" />
             <Spinner animation="grow" variant="dark" />
           </div>
-        ) : (
-          searchResults.map((result, index) => <SearchResult key={index} data={result} />)
         )}
+        <Row>
+          {searchResults.length > 0 && searchResults.map((result, index) => <SearchResult key={index} data={result} />)}
+        </Row>
       </div>
     </Container>
   );
